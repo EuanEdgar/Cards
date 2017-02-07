@@ -1,0 +1,68 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+$red: #ff6666;
+$darkred: #ff3333;
+$cyan: #66ffff;
+
+$iconsize: 25px;
+
+$border: 1px solid black;
+
+body{
+	color: $red;
+	background: #ffe1ce !important;
+}
+
+.form-control.custom{
+	height:70pt;
+	max-width:100%;
+}
+
+div.edit{
+}
+
+div.delete a{
+	color:$red;
+}
+
+div.icon{
+	text-align: center;
+	font-size:15pt;
+	width:$iconsize;
+	height:$iconsize;
+	border: $border;
+	border-radius:3px;
+	margin-right:5px;
+	display:inline;
+}
+
+div.delete a:hover{
+	color:$darkred;
+}
+
+div.right{
+	float:right;
+}
+
+div a:hover{
+	text-decoration:none;
+	color:$red;
+}
+
+div.icon:hover{
+	background-color:#eeeeff;
+}
+
+.list-group-item.custom{
+	display:inline-block;
+	width:100%;
+}
