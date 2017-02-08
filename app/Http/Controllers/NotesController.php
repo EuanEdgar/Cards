@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Note;
 use App\Card;
 
+use App\Http\Controllers\Controller;
+use Validator;
+
 class NotesController extends Controller
 {
     public function create(Request $request, Card $card){
@@ -14,10 +17,18 @@ class NotesController extends Controller
     	$note->body=$request['body'];
     	$note->user_id=1;
     	$note->card_id=$card->id;
-    	$this->validate($request, [
-    		'body'=>'required'
-    	]);
+    	$validator = Validator::make($request->all(), [
+            'body'=>'required'
+        ]);
+
+        if ($validator->fails()) {
+            flash('The note must have text!', 'error');
+            return back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
     	$note->save();
+        flash('Note created!', 'success');
     	return back();
     }
 
@@ -26,16 +37,26 @@ class NotesController extends Controller
     }
 
     public function update(Note $note, Request $request){
-    	$this->validate($request, [
-    		'body'=>'required',
-    		'email' => 'email|unique:users'
-    	]);
+
+        $validator = Validator::make($request->all(), [
+            'body'=>'required'
+        ]);
+
+        if ($validator->fails()) {
+            flash('The note must have text!', 'error');
+            return back()
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
     	$note->update(['body'=>$request['body']]);
+    	flash('Note updated!', 'info');
     	return redirect('/cards/'.$note->card_id);
     }
 
     public function delete(Note $note){
     	$note->delete();
+        flash('Note deleted!', 'info');
     	return back();
     }
 }

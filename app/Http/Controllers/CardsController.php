@@ -14,7 +14,7 @@ class CardsController extends Controller
     }
 
     public function show($id){
-    	$card = Card::with('notes.user')->find($id);
+    	$card = Card::with('notes')->find($id);
     	if($card==null)$card = new Card();
     	return view('cards.show', compact('card'));
     }

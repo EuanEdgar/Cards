@@ -14,6 +14,7 @@ Edit note
 			</div>
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary">Update Note</button>
+				<a class="btn btn-default" href="{{ URL::previous() }}" roll="button">Cancel</a>
 			</div>
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 		</form>

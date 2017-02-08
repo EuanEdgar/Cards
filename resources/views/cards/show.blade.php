@@ -11,8 +11,7 @@
 		<ul class="list-group">
 			@foreach($card->notes as $note)
 				<li class="list-group-item custom">
-				{{$note->body}}&nbsp; 
-				@if($note->user)<a href="#">~{{$note->user->username}}</a>@endif
+				{{$note->body}}&nbsp;
 				<div class="right">
 					<div class="icon edit"><a href="/notes/{{$note->id}}/edit">&nbsp;&#9998;&nbsp;</a></div>
 					<div class="icon delete"><a href="/notes/{{$note->id}}/delete">&nbsp;X&nbsp;</a></div>
@@ -36,4 +35,7 @@
 		</form>
 	</div>
 </div>
+@stop
+
+@section('js')
 @stop

@@ -11203,6 +11203,10 @@ var app = new Vue({
   el: '#app'
 });
 
+function alrt(text) {
+  alert(text);
+}
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
