@@ -8371,14 +8371,16 @@ div.icon:hover {
 }
 
 .Alert--info {
-  background-color: #ffffdd;
+  background-color: #ffff66;
+  color: #000099;
 }
 
 .Alert--success {
-  background-color: #ddffcc;
+  background-color: #66ff66;
+  color: #990099;
 }
 
 .Alert--error {
   background-color: #ff6666;
-  color: white;
+  color: 009999;
 }

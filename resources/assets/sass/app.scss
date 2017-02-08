@@ -13,6 +13,8 @@ $bg: #fff6f1;
 $darkred: #ff3333;
 $red: #ff6666;
 $cyan: #66ffff;
+$yellow: #ffff66;
+$green: #66ff66;
 
 $iconsize: 25px;
 
@@ -75,14 +77,16 @@ div.icon:hover{
 }
 
 .Alert--info{
-	background-color: #ffffdd;
+	background-color: $yellow;
+	color:#000099;
 }
 
 .Alert--success{
-	background-color: #ddffcc;
+	background-color: $green;
+	color:#990099;
 }
 
 .Alert--error{
 	background-color:$red;
-	color:white;
+	color:009999;
 }
